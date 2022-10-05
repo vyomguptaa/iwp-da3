@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Question 2</title>
+    <style type="text/css">
+        body {
+            font-family: Calibri;
+        }
+        
+        input[type="text"] {
+            width: 250px;
+        }
+        
+        input[type="submit"],
+        input[type="button"] {
+            width: 100px;
+            height: 27px;
+            position: relative;
+            left: 180px;
+        }
+        /* Style the links inside the navigation bar */
+        
+        form {
+            text-align: center;
+            font-family: Calibri;
+            font-size: 20px;
+            border: 3px solid black;
+            width: 600px;
+            margin: 20px auto;
+        }
+        
+        div {
+            background-color: #333;
+            overflow: hidden;
+        }
+        
+        div a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        td {
+            padding: 10px;
+        }
+        
+        td:first-child {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        td:last-child {
+            text-align: left;
+        }
+    </style>
+    <script>
+        function changeColor() {
+            var x = document.getElementById("myDIV");
+            x.style.backgroundColor = "red";
+        }
+
+        function changeColor1() {
+            var x = document.getElementById("myDIV");
+            x.style.backgroundColor = "green";
+        }
+
+        function changeColor2() {
+            var x = document.getElementById("myDIV");
+            x.style.backgroundColor = "blue";
+        }
+
+        function changeColor3() {
+            var x = document.getElementById("myDIV");
+            x.style.backgroundColor = "yellow";
+        }
+
+        function changeColor4() {
+            var x = document.getElementById("myDIV");
+            x.style.backgroundColor = "pink";
+        }
+
+        //create animation using javascript
+        function myMove() {
+            var elem = document.getElementById("animate");
+            var pos = 0;
+            var id = setInterval(frame, 5);
+
+            function frame() {
+                if (pos == 350) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
+                }
+            }
+        }
+        //create CSS hover animation using event handlers
+        function myFunction() {
+            document.getElementById("demo").style.color = "red";
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <a href="form.html">Question 1</a>
+        <a href="question2.html">Question 2</a>
+        <a href="emi.html">Question 3</a>
+        <a href="multiple.html">Question 4</a>
+    </div>
+    <hr>
+
+    <form>
+        <h2>Changing Colour using onClick Feature</h2>
+        <div id="myDIV" style="height:100px;background-color:red;"></div>
+        <button type="button" onclick="changeColor()">Red</button>
+        <button type="button" onclick="changeColor1()">Green</button>
+        <button type="button" onclick="changeColor2()">Blue</button>
+        <button type="button" onclick="changeColor3()">Yellow</button>
+        <button type="button" onclick="changeColor4()">Pink</button>
+
+    </form>
+    <form style="padding:0 0 60px 0">
+        <h2 style="padding:40px 0 30px 0">Object is moving on click function</h2>
+        <div id="animate" style="width:50px;height:50px;background-color:blue;position:absolute;"></div>
+        <button type="button" onclick="myMove()">Click Me</button>
+
+    </form>
+    <form>
+        <h2>Text is changing its colour when hovering over it</h2>
+        <p id="demo" onmouseover="myFunction()">Mouse over me.</p>
+    </form>
+</body>
+
+</html>

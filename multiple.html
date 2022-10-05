@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Question 4</title>
+    <style type="text/css">
+        body {
+            font-family: Calibri;
+        }
+        
+        input[type="text"] {
+            width: 250px;
+        }
+        
+        input[type="submit"],
+        input[type="reset"] {
+            width: 77px;
+            height: 27px;
+            position: relative;
+            left: 180px;
+        }
+        
+        form {
+            text-align: center;
+            font-family: Calibri;
+            font-size: 20px;
+            border: 3px solid black;
+            width: 600px;
+            margin: 20px auto;
+        }
+        
+        div {
+            background-color: #333;
+            overflow: hidden;
+        }
+        
+        div a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        td {
+            padding: 5px;
+        }
+        
+        td:first-child {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        td:last-child {
+            text-align: left;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <a href="form.html">Question 1</a>
+        <a href="question2.html">Question 2</a>
+        <a href="emi.html">Question 3</a>
+        <a href="multiple.html">Question 4</a>
+    </div>
+    <hr>
+    <form>
+        <h2>Extract a substring from a string</h2>
+        <table>
+            <tr>
+                <td>String:</td>
+                <td>
+                    <p id="str">Internet and Web Programming</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Start:</td>
+                <td>
+                    <p>0</p>
+                </td>
+            </tr>
+            <tr>
+                <td>End:</td>
+                <td>
+                    <p>8</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td>
+                    <p id="result"></p>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="extract" onclick="extract()" /></td>
+            </tr>
+        </table>
+
+
+
+    </form>
+    <form>
+        <h2>Search and replace a substring from a string </h2>
+        <table>
+
+
+
+            <tr>
+                <td>String:</td>
+                <td>
+                    <p>Internet and Protocol Programming</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Search:</td>
+                <td>
+                    <p>Protocol</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Replace:</td>
+                <td>
+                    <p>Web</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td>
+                    <p id="demo">Internet and Protocol Programming</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="Replace" onclick="replace()" /></td>
+            </tr>
+        </table>
+
+
+    </form>
+    <form>
+        <h2>Find a pattern existence in the string using regular expression</h2>
+        <table>
+            <tr>
+                <td>String:</td>
+                <td>
+                    <p>Internet and Protocol Programming</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Pattern:</td>
+                <td>
+                    <p>/Inte[rn]net/</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td>
+                    <p id="result">
+                        <script>
+                            var regex = /ca[kf]e/;
+                            var str = "He was eating cake in the cafe.";
+
+                            if (regex.test(str)) {
+                                document.write("Match found!");
+                            } else {
+                                document.write("Match not found.");
+                            }
+                        </script>
+                    </p>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+    <form>
+        <h2>Reverse an array</h2>
+        <table>
+
+
+
+            <tr>
+                <td>Array:</td>
+                <td>
+                    <p>6,3,8,4,5</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td>
+                    <p id="result">
+                        <script>
+                            var arr = [6, 3, 8, 4, 5];
+                            var rev = arr.reverse();
+                            document.write(rev);
+                        </script>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <form>
+        <h2>Find the difference of two given dates</h2>
+        <table>
+            <tr>
+                <td>Date 1:</td>
+                <td>
+                    <p>2019-12-01</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Date 2:</td>
+                <td>
+                    <p>2020-12-31</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td>
+                    <p id="result">
+                        <script>
+                            var date1 = new Date('2019-12-01');
+                            var date2 = new Date('2020-12-31');
+                            var Difference_In_Time = date2.getTime() - date1.getTime();
+                            var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+                            document.write(Difference_In_Days + " days");
+                        </script>
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+    <script>
+        function extract() {
+            let str = "Internet and Web Programming";
+            var result = str.substring(0, 8);
+            document.getElementById("result").innerHTML = result;
+
+
+        }
+
+        function replace() {
+            let text = document.getElementById("demo").innerHTML;
+            document.getElementById("demo").innerHTML = text.replace("Protocol", "Web");
+        }
+    </script>
+
+</body>
+
+</html>

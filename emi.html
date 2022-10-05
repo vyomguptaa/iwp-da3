@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Question 3</title>
+    <style type="text/css">
+        body {
+            font-family: Calibri;
+        }
+        
+        input[type="text"] {
+            width: 250px;
+        }
+        
+        input[type="submit"],
+        input[type="button"] {
+            width: 100px;
+            height: 27px;
+            position: relative;
+            left: 180px;
+        }
+        
+        form {
+            text-align: center;
+            font-family: Calibri;
+            font-size: 20px;
+            border: 3px solid black;
+            width: 600px;
+            margin: 20px auto;
+        }
+        
+        div {
+            background-color: #333;
+            overflow: hidden;
+        }
+        
+        div a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        td {
+            padding: 10px;
+        }
+        
+        td:first-child {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        td:last-child {
+            text-align: left;
+        }
+    </style>
+    <script>
+        function calculateEMI() {
+            var fullAmount = document.getElementById("fullAmount").value;
+            var initialPayment = document.getElementById("initialPayment").value;
+            var noOfMonths = document.getElementById("noOfMonths").value;
+            var balanceAmount = fullAmount - initialPayment;
+            var interestRate = 10;
+            var interestAmount = balanceAmount * interestRate / 100;
+            var emi = (balanceAmount + interestAmount) / noOfMonths;
+            document.getElementById("emi").value = emi;
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <a href="form.html">Question 1</a>
+        <a href="question2.html">Question 2</a>
+        <a href="emi.html">Question 3</a>
+        <a href="multiple.html">Question 4</a>
+    </div>
+    <hr>
+
+    <form>
+        <h1>Car Loan EMI Calculator</h1>
+        <table>
+            <tr>
+                <td>Full Amount</td>
+                <td><input type="text" id="fullAmount" /></td>
+            </tr>
+            <tr>
+                <td>Initial Payment</td>
+                <td><input type="text" id="initialPayment" /></td>
+            </tr>
+            <tr>
+                <td>No of Months</td>
+                <td><input type="text" id="noOfMonths" /></td>
+
+            </tr>
+            <tr>
+
+                <td><input type="button" value="Calculate EMI" onclick="calculateEMI()" /></td>
+
+            </tr>
+            <tr>
+                <td>EMI</td>
+                <td><input type="text" id="emi" /></td>
+
+            </tr>
+
+        </table>
+    </form>
+</body>
+
+</html>
